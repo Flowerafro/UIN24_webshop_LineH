@@ -1,20 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;600;700&display=swap');
+
 :root {
     --red: #DA291C;
     --blue: #006DB7;
     --yellow: #FFD700;
     --green: #00AF4D;
     --black: #000000;
-    --white: #ffffff;
+    --white: #FFFFFF;
 
-    --font: "Rubik", sans-serif;
+    --font: 'Rubik', sans-serif;
     --rootsize: 20px;
     --maxsize: 1200px;
-
 }
 
 body {
-    background-image: url(website_images/mainbackground.png);
+    background-image: url("website_images/mainbackground.png");
     background-color: var(--yellow);
     font-family: var(--font);
     font-size: var(--rootsize);
@@ -23,13 +23,11 @@ body {
 }
 
 /* Fixed text sizes */
-
 p { font-size: 1rem; }
-h2 { font-size: 2.5rem; font-weight: 700;}
-h3 { font-size: 1.5rem; font-weight: 600;}
+h2 { font-size: 2.5rem; font-weight: 700; }
+h3 { font-size: 1.5rem; font-weight: 600; }
 
 /* Main structure */
-
 #container {
     width: 100%;
     max-width: var(--maxsize);
@@ -38,38 +36,116 @@ h3 { font-size: 1.5rem; font-weight: 600;}
     background-color: var(--white);
 }
 
-/* Header */ 
+/* Header */
 header {
     display: flex;
     justify-content: space-between;
     padding: 2rem 1rem;
 }
-#logo { max-width: 15rem; }
-#carticon { max-width: 3rem; }
 
-/* nav */
+#logo { max-width: 15rem; }
+#carticon {max-width: 3rem; }
+
+header button {
+   min-width: 3rem;
+   padding: 0;
+   background: transparent;
+   border: none;
+   cursor: pointer;
+}
+
+header button span {
+	display: block;
+	font-size: 0.8rem;
+	width: 1.5rem;
+	height: 1.5rem;
+	text-align: center;
+	background-color: var(--red);
+	color: var(--white);
+	border-radius: 50%;
+	padding: 0.3rem;
+	box-sizing: border-box;
+}
 
 nav {
     background-color: var(--red);
 }
-
 ul {
     padding: 0;
     list-style-type: none;
     display: flex;
     gap: 1rem;
 }
-
 nav a {
     display: inline-block;
     padding: 1rem;
+    padding-top: calc(1rem + 4px);
+    color: var(--white);
     text-decoration: none;
     text-transform: uppercase;
-    color: var(--white);
+    box-sizing: border-box;
+    border-bottom: 6px solid var(--red);
 }
-
 nav a:hover {
     background-color: var(--yellow);
     color: var(--black);
+    border-bottom: 6px solid var(--black);
 }
 
+/* Kategoriside - produkter */
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 2rem;
+    padding: 1rem;
+}
+
+main h2 {
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+main article {
+    max-width: 31%;
+    flex-grow: 1;
+    box-sizing: border-box;
+    padding: 1rem;
+    background-color: var(--black);
+    /* margin: 1rem;*/
+    color: var(--white);
+    border-bottom: 1rem solid var(--green);
+}
+
+main article img {
+    max-width: 100%;
+    height: auto;
+}
+
+main article h3 {
+    margin: 0.25rem 0;
+}
+
+main article a {
+    color: var(--yellow);
+    text-decoration: none;
+    text-transform: lowercase;
+    font-size: 1rem;
+}
+
+main article span {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+main article button {
+    background-color: var(--green);
+    border: none;
+    font-family: var(--font);
+    font-size: 1rem;
+    color: var(--white);
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
